@@ -16,12 +16,12 @@ import SpaceItemComponentCss from "./generated/themes/SpaceItemComponent.css.js"
 const metadata = {
 	tag: "ui5-space-item-component",
 	properties: /** @lends sap.ui.webc.SpacePackage.SpaceItemComponent.prototype */ {
-		title:{
-			type:String
+		title: {
+			type: String,
 		},
-		description:{
-			type:String
-		}
+		description: {
+			type: String,
+		},
 	},
 	slots: /** @lends sap.ui.webc.SpacePackage.SpaceItemComponent.prototype */ {
 		//
@@ -45,14 +45,14 @@ const metadata = {
  * <code>import SpacePackage/dist/SpaceItemComponent.js";</code>
  *
  * @constructor
- * @alias be.wl.SpaceItemComponent
+ * @alias be.wl.SpaceLibrary.SpaceItemComponent
  * @extends sap.ui.webc.base.UI5Element
- * @tagname ui5-space-item-component
+ * @tagname space-item-component
  * @public
  */
 @customElement("space-item-component")
 class SpaceItemComponent extends UI5Element {
-	constructor(){
+	constructor() {
 		super();
 	}
 	static get metadata() {
