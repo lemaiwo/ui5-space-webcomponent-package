@@ -115,21 +115,19 @@ class SpaceComponent extends UI5Element {
 		const mainDiv = this.shadowRoot!.querySelector(".star-wars-intro") as HTMLElement;
 		// For every star we want to display
 		for (let i = 0; i < numStars; i++) {
-			let star = document.createElement("div");
+			const star = document.createElement("div");
 			star.className = "star";
-			var xy = this.getRandomPosition(mainDiv);
-			star.style.top = xy[0] + 'px';
-			star.style.left = xy[1] + 'px';
+			const xy = this.getRandomPosition(mainDiv);
+			star.style.top = `${xy[0]}px`;
+			star.style.left = `${xy[2]}px`;
 			mainDiv.append(star);
 		}
-		// shadow.querySelector('slot[name=title]')!.textContent = this.sectiontitle;
-		// shadow.querySelector('slot[name=body]')!.textContent = this.sectionbody;
 	}
 	getRandomPosition(element: HTMLElement) {
-		var y = element.offsetWidth;//innerWidth;
-		var x = element.offsetHeight;//innerHeight;
-		var randomX = Math.floor(Math.random() * x);
-		var randomY = Math.floor(Math.random() * y);
+		const y = element.offsetWidth;
+		const x = element.offsetHeight;
+		const randomX = Math.floor(Math.random() * x);
+		const randomY = Math.floor(Math.random() * y);
 		return [randomX, randomY];
 	}
 }
