@@ -7,6 +7,6 @@ import defaultTheme from "./sap_fiori_3/parameters-bundle.css.js";
 registerThemePropertiesLoader("@ui5/webcomponents-theming", "sap_fiori_3", async () => defaultThemeBase);
 registerThemePropertiesLoader("SpacePackage", "sap_fiori_3", async () => defaultTheme);
 
-const styleData: StyleData = {packageName:"SpacePackage",fileName:"themes\SpaceItemComponent.css.ts",content:".title-content{position:absolute;top:100%;animation:scroll 120s linear 4s forwards}.title-content>.content-header{text-align:center}"};
+const styleData: StyleData = {packageName:"SpacePackage",fileName:"themes\SpaceItemComponent.css.ts",content:".space-article>.content-header{text-align:center}"};
 export default styleData;
 	

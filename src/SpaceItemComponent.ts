@@ -14,7 +14,7 @@ import SpaceItemComponentCss from "./generated/themes/SpaceItemComponent.css.js"
  * @public
  */
 const metadata = {
-	tag: "ui5-space-item-component",
+	tag: "space-item-component",
 	properties: /** @lends sap.ui.webc.SpacePackage.SpaceItemComponent.prototype */ {
 		title: {
 			type: String,

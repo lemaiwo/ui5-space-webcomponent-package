@@ -9,9 +9,15 @@
     vertical-align: middle;
     line-height: 3rem;
 }
+.star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+}
 
 .star-wars-intro {
-    background: url("img/stars-bg.jpg") center center;
+    /* background: url("img/stars-bg.jpg") center center; */
     width: 100%;
     height: 100%;
     font-family: "Droid Sans", arial, verdana, sans-serif;

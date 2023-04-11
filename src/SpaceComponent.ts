@@ -13,7 +13,7 @@ import SpaceComponentCss from "./generated/themes/SpaceComponent.css.js";
 import { PLEASE_WAIT } from "./generated/i18n/i18n-defaults.js";
 
 const metadata = {
-	tag: "ui5-space-component",
+	tag: "space-component",
 	properties: {
 		/**
 		 * Defines the intro.
@@ -24,6 +24,17 @@ const metadata = {
 		 * @public
 		 */
 		intro: {
+			type: String,
+		},
+		/**
+		 * Defines the intro.
+		 * <br><br>
+		 *
+		 * @type {string}
+		 * @defaultvalue ""
+		 * @public
+		 */
+		logo: {
 			type: String,
 		},
 	},
@@ -60,10 +71,14 @@ const metadata = {
 @customElement("space-component")
 class SpaceComponent extends UI5Element {
 	static i18nBundle: I18nBundle;
+	// private intro: string = '';
 
 	constructor() {
 		super();
 	}
+	// static get observedAttributes() {
+	// 	return ['intro','logo'];
+	// }
 	static get metadata() {
 		return metadata;
 	}
@@ -85,6 +100,37 @@ class SpaceComponent extends UI5Element {
 
 	get pleaseWaitText() {
 		return SpaceComponent.i18nBundle.getText(PLEASE_WAIT);
+	}
+	onAfterRendering() {
+		const numStars = 100;
+
+		// this.shadowRoot!.addEventListener('click', e => {
+		// 	const event = new CustomEvent('doSomething', {
+		// 		composed: true,
+		// 		bubbles: true,
+		// 		detail: { intro: this.intro }
+		// 	});
+		// 	this.shadowRoot!.dispatchEvent(event);
+		// });
+		const mainDiv = this.shadowRoot!.querySelector(".star-wars-intro") as HTMLElement;
+		// For every star we want to display
+		for (let i = 0; i < numStars; i++) {
+			let star = document.createElement("div");
+			star.className = "star";
+			var xy = this.getRandomPosition(mainDiv);
+			star.style.top = xy[0] + 'px';
+			star.style.left = xy[1] + 'px';
+			mainDiv.append(star);
+		}
+		// shadow.querySelector('slot[name=title]')!.textContent = this.sectiontitle;
+		// shadow.querySelector('slot[name=body]')!.textContent = this.sectionbody;
+	}
+	getRandomPosition(element: HTMLElement) {
+		var y = element.offsetWidth;//innerWidth;
+		var x = element.offsetHeight;//innerHeight;
+		var randomX = Math.floor(Math.random() * x);
+		var randomY = Math.floor(Math.random() * y);
+		return [randomX, randomY];
 	}
 }
 
