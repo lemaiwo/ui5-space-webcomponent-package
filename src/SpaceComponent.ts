@@ -119,7 +119,7 @@ class SpaceComponent extends UI5Element {
 			star.className = "star";
 			const xy = this.getRandomPosition(mainDiv);
 			star.style.top = `${xy[0]}px`;
-			star.style.left = `${xy[2]}px`;
+			star.style.left = `${xy[1]}px`;
 			mainDiv.append(star);
 		}
 	}
