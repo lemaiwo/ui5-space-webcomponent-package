@@ -61,7 +61,7 @@ class SpaceComponent extends UI5Element {
 	 * @slot items
 	 * @public
 	 */
-	@slot({ type: HTMLElement, "default": true })
+	@slot({ type: HTMLElement, "default": true, individualSlots: true })
 	items!: Array<SpaceItemComponent>;
 
 	constructor() {
@@ -103,22 +103,28 @@ class SpaceComponent extends UI5Element {
 		// 	this.shadowRoot!.dispatchEvent(event);
 		// });
 		const mainDiv = this.shadowRoot!.querySelector(".star-wars-intro") as HTMLElement;
+
 		// For every star we want to display
 		for (let i = 0; i < numStars; i++) {
-			const star = document.createElement("div");
-			star.className = "star";
-			const xy = this.getRandomPosition(mainDiv);
-			star.style.top = `${xy[0]}px`;
-			star.style.left = `${xy[1]}px`;
-			mainDiv.append(star);
+			const { top, left } = this.getRandomPosition(mainDiv);
+			mainDiv.append(this.getRandomStar(top, left));
 		}
 	}
+	getRandomStar(top: string, left: string) {
+		const star = document.createElement("div");
+		star.className = "star";
+		star.style.top = top;
+		star.style.left = left;
+		return star;
+	}
 	getRandomPosition(element: HTMLElement) {
-		const y = element.offsetWidth;
-		const x = element.offsetHeight;
-		const randomX = Math.floor(Math.random() * x);
-		const randomY = Math.floor(Math.random() * y);
-		return [randomX, randomY];
+		return {
+			top: `${this.getRandomNumber(element.offsetHeight)}px`,
+			left: `${this.getRandomNumber(element.offsetWidth)}px`,
+		};
+	}
+	getRandomNumber(value: number) {
+		return Math.floor(Math.random() * value);
 	}
 }
 

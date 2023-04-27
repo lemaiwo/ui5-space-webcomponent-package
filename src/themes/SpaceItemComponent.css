@@ -4,6 +4,6 @@
     animation: scroll 120s linear 4s forwards;
 } */
 
-.space-article>.content-header {
+.space-article>h2 {
     text-align: center;
 }
