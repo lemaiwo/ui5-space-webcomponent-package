@@ -1,5 +1,8 @@
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
 import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
+import property from "@ui5/webcomponents-base/dist/decorators/property.js";
+import event from "@ui5/webcomponents-base/dist/decorators/event.js";
+import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 import { getI18nBundle } from "@ui5/webcomponents-base/dist/i18nBundle.js";
 import type I18nBundle from "@ui5/webcomponents-base/dist/i18nBundle.js";
@@ -11,50 +14,8 @@ import SpaceComponentTemplate from "./generated/templates/SpaceComponentTemplate
 import SpaceComponentCss from "./generated/themes/SpaceComponent.css.js";
 
 import { PLEASE_WAIT } from "./generated/i18n/i18n-defaults.js";
+import SpaceItemComponent from "./SpaceItemComponent.js";
 
-const metadata = {
-	tag: "space-component",
-	properties: {
-		/**
-		 * Defines the intro.
-		 * <br><br>
-		 *
-		 * @type {string}
-		 * @defaultvalue ""
-		 * @public
-		 */
-		intro: {
-			type: String,
-		},
-		/**
-		 * Defines the intro.
-		 * <br><br>
-		 *
-		 * @type {string}
-		 * @defaultvalue ""
-		 * @public
-		 */
-		logo: {
-			type: String,
-		},
-	},
-	managedSlots: true,
-	slots: {
-		/**
-		 * Defines the items.
-		 * <br><br>
-		 * <b>Note:</b> Although this slot accepts HTML Elements, it is strongly recommended that you only use text in order to preserve the intended design.
-		 *
-		 * @type {HTMLElement[]}
-		 * @slot
-		 * @public
-		 */
-		items: {
-			"type": HTMLElement,
-			"individualSlots": false,
-		},
-	},
-};
 /**
  * @class
  *
@@ -70,18 +31,47 @@ const metadata = {
  */
 @customElement("space-component")
 class SpaceComponent extends UI5Element {
-	static i18nBundle: I18nBundle;
-	// private intro: string = '';
+	/**
+	 * Defines the intro of the space component.
+	 *
+	 * @type {string}
+	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.intro
+	 * @defaultvalue ""
+	 * @public
+	 */
+	@property()
+	intro!: string;
+
+	/**
+	 * Defines the logo of the space component.
+	 *
+	 * @type {string}
+	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.logo
+	 * @defaultvalue ""
+	 * @public
+	 */
+	@property()
+	logo!: string;
+
+	/**
+	 * Defines the articles of the component.
+	 *
+	 * @type {be.wl.SpaceLibrary.SpaceItemComponent[]}
+	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.default
+	 * @slot items
+	 * @public
+	 */
+	@slot({ type: HTMLElement, "default": true })
+	items!: Array<SpaceItemComponent>;
 
 	constructor() {
 		super();
 	}
+	static i18nBundle: I18nBundle;
+	// private intro: string = '';
 	// static get observedAttributes() {
 	// 	return ['intro','logo'];
 	// }
-	static get metadata() {
-		return metadata;
-	}
 	static get render() {
 		return litRender;
 	}

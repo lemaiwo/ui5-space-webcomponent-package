@@ -3,33 +3,13 @@ import customElement from "@ui5/webcomponents-base/dist/decorators/customElement
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 import { getI18nBundle } from "@ui5/webcomponents-base/dist/i18nBundle.js";
 import type I18nBundle from "@ui5/webcomponents-base/dist/i18nBundle.js";
+import property from "@ui5/webcomponents-base/dist/decorators/property.js";
 
 // Template
 import SpaceItemComponentTemplate from "./generated/templates/SpaceItemComponentTemplate.lit.js";
 
 // Styles
 import SpaceItemComponentCss from "./generated/themes/SpaceItemComponent.css.js";
-
-/**
- * @public
- */
-const metadata = {
-	tag: "space-item-component",
-	properties: /** @lends sap.ui.webc.SpacePackage.SpaceItemComponent.prototype */ {
-		title: {
-			type: String,
-		},
-		description: {
-			type: String,
-		},
-	},
-	slots: /** @lends sap.ui.webc.SpacePackage.SpaceItemComponent.prototype */ {
-		//
-	},
-	events: /** @lends sap.ui.webc.SpacePackage.SpaceItemComponent.prototype */ {
-		//
-	},
-};
 
 /**
  * @class
@@ -52,11 +32,30 @@ const metadata = {
  */
 @customElement("space-item-component")
 class SpaceItemComponent extends UI5Element {
+	/**
+	 * Defines the title of the space item component.
+	 *
+	 * @type {string}
+	 * @name be.wl.SpaceLibrary.SpaceItemComponent.prototype.title
+	 * @defaultvalue ""
+	 * @public
+	 */
+	@property()
+	title!: string;
+
+	/**
+	 * Defines the description of the space item component.
+	 *
+	 * @type {string}
+	 * @name be.wl.SpaceLibrary.SpaceItemComponent.prototype.description
+	 * @defaultvalue ""
+	 * @public
+	 */
+	@property()
+	description!: string;
+
 	constructor() {
 		super();
-	}
-	static get metadata() {
-		return metadata;
 	}
 
 	static get render() {
