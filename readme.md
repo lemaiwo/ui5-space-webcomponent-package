@@ -78,7 +78,7 @@ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 	 * Defines the articles of the component.
 	 *
 	 * @type {be.wl.SpaceLibrary.SpaceItemComponent[]}
-	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.default
+	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.items
 	 * @slot items
 	 * @public
 	 */
