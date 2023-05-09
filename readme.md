@@ -114,7 +114,9 @@ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 		return Math.floor(Math.random() * value);
 	}
 ```
-- Apply css
+<details>
+- Apply css <summary>Show css</summary>
+	
 ```
 :host {
     border: 2px solid var(--my-component-border-color);
@@ -373,6 +375,7 @@ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
         top: -170%;
     }
 }
+</details>
 ```
 ### Space Item Component
 - Create a new component for the items: SpaceItemComponent
