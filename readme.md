@@ -3,7 +3,7 @@
 ### Project setup
 - Generate UI5 WebComponent Package
 ```
-npm init @ui5/webcomponents-package@1.11.0 -- --name SpacePackage --enable-typescript
+npm init @ui5/webcomponents-package@1.13.0 -- --name SpacePackage --enable-typescript
 ```
 - Provide the name for the first UI5 WebComponent, eg.: space-component
 - Open Package in Code:
@@ -375,10 +375,10 @@ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 }
 ```
 ### Space Item Component
-- The component generator does not yet support TypeScript, so I'll make a copy of the SpaceComponent of the files:
-    - SpaceComponent.hbs ==> SpaceItemComponent.hbs
-    - SpaceComponent.ts ==> SpaceItemComponent.ts
-    - SpaceComponent.css ==> SpaceItemComponent.css
+- Create a new component for the items: SpaceItemComponent
+```
+npm run create-ui5-element
+```
 - Include it in the bundle.esm.js
 ```
 import "./dist/SpaceItemComponent.js";
