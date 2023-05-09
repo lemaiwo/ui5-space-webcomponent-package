@@ -114,8 +114,9 @@ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 		return Math.floor(Math.random() * value);
 	}
 ```
+- Apply css 
 <details>
-- Apply css <summary>Show css</summary>
+	<summary>Show css</summary>
 	
 ```
 :host {
