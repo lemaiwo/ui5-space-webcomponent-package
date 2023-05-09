@@ -375,9 +375,9 @@ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
         top: -170%;
     }
 }
+```
 </details>
 
-```
 ### Space Item Component
 - Create a new component for the items: SpaceItemComponent
 ```
