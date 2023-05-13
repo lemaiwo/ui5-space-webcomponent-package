@@ -378,6 +378,18 @@ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
         top: -170%;
     }
 }
+
+/* @media screen and (max-width: 720px) { */
+    .star-wars-intro .main-content {
+        font-size: 35px;
+    }
+
+    .star-wars-intro .title-content {
+        position: absolute;
+        top: 100%;
+        animation: scroll 100s linear 4s forwards;
+    }
+/* } */
 ```
 </details>
 
