@@ -3,9 +3,11 @@
 ### Project setup
 - Generate UI5 WebComponent Package
 ```
-npm init @ui5/webcomponents-package@1.13.0 -- --name SpacePackage --enable-typescript
+npm init @ui5/webcomponents-package@latest
 ```
-- Provide the name for the first UI5 WebComponent, eg.: space-component
+- Provide the name for the package, eg.: SpacePackage
+- Select TypeScript
+- Provide the name for the first UI5 WebComponent, eg.: SpaceComponent (space-component)
 - Open Package in Code:
 ```
 code SpacePackage
