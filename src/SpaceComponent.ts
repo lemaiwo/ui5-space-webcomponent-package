@@ -57,7 +57,7 @@ class SpaceComponent extends UI5Element {
 	 * Defines the articles of the component.
 	 *
 	 * @type {be.wl.SpaceLibrary.SpaceItemComponent[]}
-	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.items
+	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.default
 	 * @slot items
 	 * @public
 	 */
