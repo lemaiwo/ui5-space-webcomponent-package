@@ -61,7 +61,7 @@ class SpaceComponent extends UI5Element {
 	 * @slot items
 	 * @public
 	 */
-	@slot({ type: HTMLElement, "default": true, individualSlots: true })
+	@slot({ type: HTMLElement, "default": true })
 	items!: Array<SpaceItemComponent>;
 
 	constructor() {

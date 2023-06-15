@@ -33,7 +33,7 @@ npm start
 
     <div class="main-content">
         <div class="title-content">
-            <slot name="items"></slot>
+            <slot></slot>
         </div>
     </div>
 </div>
@@ -84,7 +84,7 @@ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 	 * @slot items
 	 * @public
 	 */
-	@slot({ type: HTMLElement, "default": true, individualSlots: true })
+	@slot({ type: HTMLElement, "default": true })
 	items!: Array<SpaceItemComponent>;
 ```
 - Implement generation of stars using onAfterRendering function
@@ -512,8 +512,8 @@ import SpaceItemComponent from "./SpaceItemComponent.js";
 - Provide test page
 ```
 <space-component id="myFirstComponent" intro="Hello UI5con!" logo="./img/star-wars-intro.png">
-    <space-item-component slot="items" title="EPISODES IV-VI" description="After years of galactic silence, civilization is on the brink of a new Star Wars release. Now, with the Force preparing to awaken, the people of Earth seek solace in films of old. With nowhere to turn, they gather in great numbers and watch the original trilogy without rest. Three films. 6 hours. 24 minutes. Popcorn. Slushies. Total elation."></space-item-component>
-    <space-item-component slot="items" title="Episode V: The Empire Strikes Back Opener" description="It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.Evading the dreaded Imperial Starfleet, a group of freedom fighters led by Luke Skywalker has established a new secret base on the remote ice world of Hoth.The evil lord Darth Vader, obsessed with finding young Skywalker, has dispatched thousands of remote probes into the far reaches of space"></space-item-component>
+    <space-item-component title="EPISODES IV-VI" description="After years of galactic silence, civilization is on the brink of a new Star Wars release. Now, with the Force preparing to awaken, the people of Earth seek solace in films of old. With nowhere to turn, they gather in great numbers and watch the original trilogy without rest. Three films. 6 hours. 24 minutes. Popcorn. Slushies. Total elation."></space-item-component>
+    <space-item-component title="Episode V: The Empire Strikes Back Opener" description="It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.Evading the dreaded Imperial Starfleet, a group of freedom fighters led by Luke Skywalker has established a new secret base on the remote ice world of Hoth.The evil lord Darth Vader, obsessed with finding young Skywalker, has dispatched thousands of remote probes into the far reaches of space"></space-item-component>
 </space-component>
 ```
 - Copy logo image
