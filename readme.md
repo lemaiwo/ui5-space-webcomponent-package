@@ -56,7 +56,7 @@ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 	 * Defines the intro of the space component.
 	 *
 	 * @type {string}
-	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.intro
+	 * @name demo.components.SpaceComponent.prototype.intro
 	 * @defaultvalue ""
 	 * @public
 	 */
@@ -67,7 +67,7 @@ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 	 * Defines the logo of the space component.
 	 *
 	 * @type {string}
-	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.logo
+	 * @name demo.components.SpaceComponent.prototype.logo
 	 * @defaultvalue ""
 	 * @public
 	 */
@@ -79,8 +79,8 @@ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 	/**
 	 * Defines the articles of the component.
 	 *
-	 * @type {be.wl.SpaceLibrary.SpaceItemComponent[]}
-	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.default
+	 * @type {demo.components.SpaceItemComponent[]}
+	 * @name demo.components.SpaceComponent.prototype.default
 	 * @slot items
 	 * @public
 	 */
