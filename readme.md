@@ -5,12 +5,12 @@
 ```
 npm init @ui5/webcomponents-package@latest
 ```
-- Provide the name for the package, eg.: SpacePackage
+- Provide the name for the package, eg.: spacepackage
 - Select TypeScript
 - Provide the name for the first UI5 WebComponent, eg.: SpaceComponent (space-component)
 - Open Package in Code:
 ```
-code SpacePackage
+code spacepackage
 ```
 - Open bash terminal
 - Install dependencies
