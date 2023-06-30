@@ -443,7 +443,12 @@ import SpaceItemComponentCss from "./generated/themes/SpaceItemComponent.css.js"
  * @tagname space-item-component
  * @public
  */
-@customElement("space-item-component")
+@customElement({
+	tag: "space-item-component",
+	renderer: litRender,
+	styles: SpaceItemComponentCss,
+	template: SpaceItemComponentTemplate,
+})
 class SpaceItemComponent extends UI5Element {
 	/**
 	 * Defines the title of the space item component.
@@ -466,35 +471,12 @@ class SpaceItemComponent extends UI5Element {
 	 */
 	@property()
 	description!: string;
-
-	constructor() {
-		super();
-	}
-
-	static get render() {
-		return litRender;
-	}
-
-	static get styles() {
-		return SpaceItemComponentCss;
-	}
-
-	static get template() {
-		return SpaceItemComponentTemplate;
-	}
-
-	static get dependencies() {
-		return [];
-	}
-
-	static async onDefine() {
-
-	}
 }
 
 SpaceItemComponent.define();
 
 export default SpaceItemComponent;
+
 ```
 - Provide css
 ```

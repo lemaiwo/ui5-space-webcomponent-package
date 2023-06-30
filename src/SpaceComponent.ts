@@ -24,18 +24,24 @@ import SpaceItemComponent from "./SpaceItemComponent.js";
  * The <code>space-component</code> component is a demo component that displays some text.
  *
  * @constructor
- * @alias be.wl.SpaceLibrary.SpaceComponent
+ * @alias demo.components.SpaceComponent
  * @extends sap.ui.webc.base.UI5Element
  * @tagname space-component
  * @public
  */
-@customElement("space-component")
+@customElement({
+	tag: "space-component",
+	renderer: litRender,
+	styles: SpaceComponentCss,
+	template: SpaceComponentTemplate,
+})
 class SpaceComponent extends UI5Element {
+	static i18nBundle: I18nBundle;
 	/**
 	 * Defines the intro of the space component.
 	 *
 	 * @type {string}
-	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.intro
+	 * @name demo.components.SpaceComponent.prototype.intro
 	 * @defaultvalue ""
 	 * @public
 	 */
@@ -46,7 +52,7 @@ class SpaceComponent extends UI5Element {
 	 * Defines the logo of the space component.
 	 *
 	 * @type {string}
-	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.logo
+	 * @name demo.components.SpaceComponent.prototype.logo
 	 * @defaultvalue ""
 	 * @public
 	 */
@@ -56,41 +62,18 @@ class SpaceComponent extends UI5Element {
 	/**
 	 * Defines the articles of the component.
 	 *
-	 * @type {be.wl.SpaceLibrary.SpaceItemComponent[]}
-	 * @name be.wl.SpaceLibrary.SpaceComponent.prototype.default
+	 * @type {demo.components.SpaceItemComponent[]}
+	 * @name demo.components.SpaceComponent.prototype.default
 	 * @slot items
 	 * @public
 	 */
 	@slot({ type: HTMLElement, "default": true })
 	items!: Array<SpaceItemComponent>;
 
-	constructor() {
-		super();
-	}
-	static i18nBundle: I18nBundle;
-	// private intro: string = '';
-	// static get observedAttributes() {
-	// 	return ['intro','logo'];
-	// }
-	static get render() {
-		return litRender;
-	}
-
-	static get template() {
-		return SpaceComponentTemplate;
-	}
-
-	static get styles() {
-		return SpaceComponentCss;
-	}
-
 	static async onDefine() {
 		SpaceComponent.i18nBundle = await getI18nBundle("SpacePackage");
 	}
 
-	get pleaseWaitText() {
-		return SpaceComponent.i18nBundle.getText(PLEASE_WAIT);
-	}
 	onAfterRendering() {
 		const numStars = 100;
 

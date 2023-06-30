@@ -25,18 +25,23 @@ import SpaceItemComponentCss from "./generated/themes/SpaceItemComponent.css.js"
  * <code>import SpacePackage/dist/SpaceItemComponent.js";</code>
  *
  * @constructor
- * @alias be.wl.SpaceLibrary.SpaceItemComponent
+ * @alias demo.components.SpaceItemComponent
  * @extends sap.ui.webc.base.UI5Element
  * @tagname space-item-component
  * @public
  */
-@customElement("space-item-component")
+@customElement({
+	tag: "space-item-component",
+	renderer: litRender,
+	styles: SpaceItemComponentCss,
+	template: SpaceItemComponentTemplate,
+})
 class SpaceItemComponent extends UI5Element {
 	/**
 	 * Defines the title of the space item component.
 	 *
 	 * @type {string}
-	 * @name be.wl.SpaceLibrary.SpaceItemComponent.prototype.title
+	 * @name demo.components.SpaceItemComponent.prototype.title
 	 * @defaultvalue ""
 	 * @public
 	 */
@@ -47,36 +52,12 @@ class SpaceItemComponent extends UI5Element {
 	 * Defines the description of the space item component.
 	 *
 	 * @type {string}
-	 * @name be.wl.SpaceLibrary.SpaceItemComponent.prototype.description
+	 * @name demo.components.SpaceItemComponent.prototype.description
 	 * @defaultvalue ""
 	 * @public
 	 */
 	@property()
 	description!: string;
-
-	constructor() {
-		super();
-	}
-
-	static get render() {
-		return litRender;
-	}
-
-	static get styles() {
-		return SpaceItemComponentCss;
-	}
-
-	static get template() {
-		return SpaceItemComponentTemplate;
-	}
-
-	static get dependencies() {
-		return [];
-	}
-
-	static async onDefine() {
-
-	}
 }
 
 SpaceItemComponent.define();
